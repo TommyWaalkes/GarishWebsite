@@ -1,14 +1,3 @@
-// $(document).ready(function () {
-//     let text = $("p").text().split("");
-//     let output = [{}];
-//     for (i = 0; i < text.length; i++) {
-//         if (output[i] !== "") {
-//             output[i] = `<span style='font-family: ${getRandomFont()}; color: ${getRandomColor()}' > ${text[i]} </span>`;
-//         }
-//     }
-
-//     $("p").html(output);
-// });
 let text = document.getElementById("Text").innerText.split("");
 
 let output = [];
