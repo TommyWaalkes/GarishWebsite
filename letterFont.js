@@ -1,15 +1,29 @@
-$(document).ready(function () {
-    let text = $("p").text().split("");
-    let output = [{}];
-    for (i = 0; i < text.length; i++) {
-        if (output[i] !== "") {
-            output[i] = `<span style='font-family: ${getRandomFont()}; color: ${getRandomColor()}' > ${text[i]} </span>`;
-        }
+// $(document).ready(function () {
+//     let text = $("p").text().split("");
+//     let output = [{}];
+//     for (i = 0; i < text.length; i++) {
+//         if (output[i] !== "") {
+//             output[i] = `<span style='font-family: ${getRandomFont()}; color: ${getRandomColor()}' > ${text[i]} </span>`;
+//         }
+//     }
+
+//     $("p").html(output);
+// });
+let text = document.getElementById("Text").innerText.split("");
+
+let output = [];
+for (let i = 0; i < text.length; i++) {
+    if (output[i] !== "") {
+        output[i] = `<span style='font-family: ${getRandomFont()}; color: ${getRandomColor()}' > ${text[i]} </span>`;
     }
+}
+document.getElementById("Text").innerHTML = "";
 
-    $("p").html(output);
-});
-
+let newHtml = "";
+for (let i = 0; i < output.length; i++) {
+    newHtml += output[i];
+}
+document.getElementById("Text").innerHTML = newHtml;
 function getRandomFont() {
     let fonts = ["Arial", "Tahoma", "Comic Sans MS", "Impact", "Verdana", "Papyrus", "Trajan", "Serif", "Sans-Serif", "Georgia", "Trebuchet MS", "Courier New", "Times New Roman"];
 
